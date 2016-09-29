@@ -17,20 +17,21 @@ public class GameTest {
     private Game game;
     private BufferedReader bufferedReader;
     private Player player;
-
+    private Board board;
     @Before
     public void setUp() throws Exception {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         player = mock(Player.class);
+        board = mock(Board.class);
 
-        game = new Game(printStream, bufferedReader, player);
+        game = new Game(printStream, bufferedReader, player, board);
     }
 
     @Test
     public void whenStartingDrawBoard() throws Exception {
         game.start();
-        verify(printStream).println("1|2|3" +'\n' + "-----" + '\n' + "4|5|6" + '\n' + "-----" + '\n' + "7|8|9");
+        verify(board).printBoard();
     }
 
     @Test
