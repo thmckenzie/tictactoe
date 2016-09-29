@@ -10,10 +10,12 @@ import java.io.PrintStream;
 public class Player {
     private PrintStream printStream;
     private BufferedReader bufferedReader;
+    private Board board;
 
-    public Player(PrintStream printStream, BufferedReader bufferedReader) {
+    public Player(PrintStream printStream, BufferedReader bufferedReader, Board board) {
         this.printStream = printStream;
         this.bufferedReader = bufferedReader;
+        this.board = board;
     }
 
     public void move() {
@@ -21,11 +23,11 @@ public class Player {
         String mark;
         try {
             mark = bufferedReader.readLine();
+            board.redraw("X", mark);
 
-
-            if(mark.equals("3")){
-                printStream.println("1|2|X" + '\n' + "-----" + '\n' + "4|5|6" + '\n' + "-----" + '\n' + "7|8|9");
-            }
+//            if(mark.equals("3")){
+//                printStream.println("1|2|X" + '\n' + "-----" + '\n' + "4|5|6" + '\n' + "-----" + '\n' + "7|8|9");
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }

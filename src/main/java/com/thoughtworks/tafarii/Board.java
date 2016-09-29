@@ -24,9 +24,20 @@ public class Board {
             print = print + "\n";
         }
         printStream.println(print);
+        print = "";
     }
 
     public void redraw(String symbol, String mark) {
-
+        for(int row = 0; row < board.length; row++){
+            for(int column = 0; column < board[0].length; column++){
+                if(board[0][column].equals(mark)){
+                    board[0][column]= symbol;
+                }
+            }
+            if(board[row][0].equals(mark)){
+                board[row][0] = symbol;
+            }
+        }
+        printBoard();
     }
 }

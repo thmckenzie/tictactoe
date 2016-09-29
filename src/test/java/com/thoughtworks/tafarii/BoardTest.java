@@ -30,14 +30,13 @@ public class BoardTest {
         verify(printStream).println("1|2|3" + '\n' + "4|5|6" + '\n' + "7|8|9\n");
     }
 
+    //Not sure if this test is working correctly
     @Test
-    public void shouldRedrawBoardWithPlayersSymbolInThatLocation() throws Exception {
-        PrintStream printStream = mock(PrintStream.class);
+    public void shouldRedrawBoardWithXInThatLocation() throws Exception {
         String symbol = "X";
-        String mark = "3";
-        Board board = new Board(printStream);
+        String mark = "4";
         board.redraw(symbol, mark);
 
-        //not exactly sure how to test this
+
     }
 }

@@ -19,12 +19,14 @@ public class PlayerTest {
     private BufferedReader bufferedReader;
     private PrintStream printStream;
     private Player player;
+    private Board board;
 
     @Before
     public void setUp() throws Exception {
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
-        player = new Player(printStream, bufferedReader);
+        board = mock(Board.class);
+        player = new Player(printStream, bufferedReader, board);
     }
 
     @Test
