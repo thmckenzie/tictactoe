@@ -22,9 +22,9 @@ public class PlayerTest {
 
     @Before
     public void setUp() throws Exception {
-        player = new Player(printStream, bufferedReader);
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
+        player = new Player(printStream, bufferedReader);
     }
 
     @Test
@@ -33,6 +33,5 @@ public class PlayerTest {
         player.move();
         verify(printStream).println("Please enter a number indicating where you would like to place your mark");
     }
-
 
 }

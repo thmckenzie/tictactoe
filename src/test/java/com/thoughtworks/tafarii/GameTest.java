@@ -38,7 +38,7 @@ public class GameTest {
         game.start();
 
         Player player1 = mock(Player.class);
-        (player1).move();
+        player1.move();
     }
 
 }

@@ -21,6 +21,8 @@ public class Player {
         String mark;
         try {
             mark = bufferedReader.readLine();
+
+
             if(mark.equals("3")){
                 printStream.println("1|2|X" + '\n' + "-----" + '\n' + "4|5|6" + '\n' + "-----" + '\n' + "7|8|9");
             }
